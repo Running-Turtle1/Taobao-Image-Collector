@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Taotao Fast Image Collector</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(500px 250px at 20% 0%, rgba(110, 231, 255, 0.25), transparent 55%),
+                  radial-gradient(500px 250px at 80% 10%, rgba(167, 139, 250, 0.20), transparent 55%),
+                  #0b1220;
+      color: rgba(255, 255, 255, 0.92);
+    }
+    h2 {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background: linear-gradient(90deg, rgba(110, 231, 255, 0.95), rgba(167, 139, 250, 0.95));
+      color: rgba(0, 0, 0, 0.85);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 800;
+      transition: filter 0.15s ease;
+    }
+    button:hover {
+      filter: brightness(1.04);
+    }
+    #result {
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      font-size: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      color: rgba(255, 255, 255, 0.86);
+    }
+    #version {
+      text-align: right;
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.60);
+    }
+  </style>
+</head>
+<body>
+  <h2>Taotao Fast Image Collector</h2>
+  <button id="collectMedia">Collect Media</button>
+  <div id="result"></div>
+  <div id="version"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

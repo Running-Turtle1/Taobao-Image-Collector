@@ -1,0 +1,21 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "images/icon128.png",
+         "16": "images/icon16.png",
+         "48": "images/icon48.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "description": "Collect images and videos from Taobao, Tmall, and AliExpress product pages",
+   "host_permissions": [ "*://*.taobao.com/*", "*://*.tmall.com/*", "*://*.aliexpress.com/*", "*://*.aliexpress.ru/*", "*://*.aliexpress.us/*", "*://*.aliexpress.de/*", "*://*.aliexpress.es/*", "*://*.aliexpress.it/*", "*://*.aliexpress.fr/*", "*://*.aliexpress.nl/*", "*://*.aliexpress.pl/*", "*://*.aliexpress.br/*" ],
+   "icons": {
+      "128": "images/icon128.png",
+      "16": "images/icon16.png",
+      "48": "images/icon48.png"
+   },
+   "manifest_version": 3,
+   "name": "Taotao Fast Image Collector",
+   "permissions": [ "scripting", "storage", "tabs", "downloads" ],
+   "version": "2.0"
+}
