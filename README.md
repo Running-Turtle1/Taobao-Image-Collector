@@ -4,6 +4,8 @@
 
 English: A Chrome extension to collect and download media URLs from Taobao/Tmall/AliExpress product pages.
 
+![](images/UI.png)
+
 ## 功能特性
 
 - 一键采集：主图 / SKU 图 / 详情图 / 买家秀 / 视频链接
