@@ -1,131 +1,54 @@
-# Taotao Fast Image Collector
+# Taotao Fast Image Collector（淘宝/天猫/速卖通 图片视频采集器）
 
-This is a Chrome browser extension for collecting image and video URLs from Taobao, Tmall, and AliExpress product pages.
+一个 Chrome 扩展：在淘宝、天猫、AliExpress 商品页一键采集媒体资源（主图 / SKU 图 / 详情图 / 买家秀 / 视频），并在结果页按分类预览与下载。
 
-## Product Features
+English: A Chrome extension to collect and download media URLs from Taobao/Tmall/AliExpress product pages.
 
-1. Automatic Collection:
-   - Main Images: Retrieve high-resolution URLs of product main images
-   - SKU Images: Collect image URLs for all product specifications (e.g., color, size)
-   - Detail Images: Extract all image URLs from the product detail page
-   - Review Images: Collect image URLs attached to user reviews
-   - Videos: Obtain video URLs from the product page
+## 功能特性
 
-2. Result Display:
-   - Show all collected results in a new tab, categorized
-   - Provide image preview functionality
-   - Display the actual size of each image
+- 一键采集：主图 / SKU 图 / 详情图 / 买家秀 / 视频链接
+- 结果页预览：按分类展示，支持打开原图链接
+- 一键下载：单张下载 + 分类批量下载（默认全选图片）
+- 自动分文件夹：下载时创建时间戳文件夹（便于整理）
 
-3. Download Features:
-   - Support direct download of individual images
-   - Batch download option for selected images by category
-   - Automatically create date-time named folders to store downloaded files
+## 安装（Load unpacked）
 
-4. User Interface:
-   - Clean popup window interface
-   - One-click collection feature
-   - Collection progress display
+1. 下载或 `git clone` 本仓库到本地
+2. 打开 Chrome 扩展页：`chrome://extensions/`
+3. 右上角开启 `Developer mode`（开发者模式）
+4. 点击 `Load unpacked`（加载已解压的扩展程序）
+5. 选择本项目目录（包含 `manifest.json` 的文件夹）
 
-5. Multi-platform Support:
-   - Support for Taobao, Tmall, and AliExpress platforms
+## 使用方法
 
-## Technology Stack
+1. 打开任意商品页（支持域名：`taobao.com` / `tmall.com` / `aliexpress.*`）
+2. 点击浏览器工具栏扩展图标，打开弹窗
+3. 点击 `Collect Media`
+4. 会自动打开 `Collection Results` 新标签页：
+   - 图片默认已全选：直接点击各分类的 `Download Selected ... Images` 即可开始下载
+   - 侧边栏提供：一键全选 / 一键取消 / 切换主题
 
-- Frontend:
-  - HTML5
-  - CSS3
-  - JavaScript (ES6+)
-  - Chrome Extension API
+## 常见问题
 
-- Data Processing:
-  - Chrome Storage API: For local data storage
-  - Fetch API: For network requests
+- 找不到内容/数量为 0：部分页面是动态加载的，滚动页面或稍等几秒后再采集。
+- 下载失败：检查 Chrome 下载权限、目标站点是否限制访问、以及图片链接是否为原图地址。
 
-- Image Processing:
-  - Canvas API: For image size calculation and preview generation
+## 开发说明
 
-- Version Control:
-  - Git: For code version management
+- 入口：`popup.html` / `popup.js`
+- 采集脚本：`content-script.js`
+- 结果页：`result.html` / `result.js`
+- 配置：`manifest.json`（MV3，使用 `scripting` / `storage` / `downloads` 等权限）
 
-## Update History
+## 隐私声明
 
-### v2.0 (Latest Version)
-- Update Date: 2023-05-25
-- Updates:
-  1. Optimized SKU image URL processing logic, now correctly retrieves original images from Taobao and Tmall
-  2. Improved AliExpress image URL processing, resolving image loading failures
-  3. Enhanced Taobao video retrieval logic, now correctly obtains video URLs
-  4. Added video preview and control functionality to the results page
-  5. Implemented batch download feature for selected images by category
-  6. Added automatic creation of date-time named folders, optimizing file organization for downloads
-
-### v1.9
-- Update Date: 2023-05-20
-- Updates:
-  1. Unified download format processing for main images and SKU images
-  2. Optimized .webp format image processing, now attempts to retrieve original formats
-  3. Improved image download logic, enhancing format consistency
-
-### v1.8
-- Update Date: 2023-04-15
-- Updates:
-  1. Updated plugin name to "Taotao Fast Image Collector"
-  2. Fixed AliExpress main image URL processing issue, now correctly retrieves original image URLs
-  3. Improved image URL processing logic, removed extra suffixes from AliExpress image URLs
-  4. Optimized code structure, improved performance
-
-## Installation Instructions
-
-1. Download or clone this repository to your local machine
-2. Open Chrome browser, go to the extensions page (chrome://extensions/)
-3. Enable "Developer mode"
-4. Click "Load unpacked extension"
-5. Select the folder containing the plugin files
-
-## Usage Instructions
-
-1. Visit any Taobao, Tmall, or AliExpress product page
-2. Click the plugin icon in the Chrome toolbar to open the popup window
-3. Click the "Collect Media" button in the popup window
-4. Wait for a new tab to open, displaying the collection results
-5. View categorized image previews and video links on the results page
-6. Click on an image to view the original in a new tab
-7. Click the download button to directly download the image or video
-8. Use the batch download button to download selected images
-
-## Notes
-
-- This plugin is for learning and research purposes only
-- Please respect the intellectual property rights of websites and sellers, do not use collected media for commercial purposes
-- Excessive use may affect your Taobao account, please use with caution
-
-## Privacy Statement
-
-This plugin does not upload any personal information or browsing data. All media URL collection operations are performed locally, and results are only saved in the browser's local storage.
+本扩展不上传任何浏览数据。采集结果仅保存在浏览器本地（`chrome.storage.local`）。
 
 ## License
 
-MIT License
+MIT
 
-## Contribution Guidelines
+## 作者 / 联系方式
 
-We welcome all forms of contributions, including but not limited to:
-- Reporting issues
-- Submitting feature requests
-- Submitting code fixes or new features
-- Improving documentation
-
-Please follow these steps:
-1. Fork this repository
-2. Create your feature branch (git checkout -b feature/AmazingFeature)
-3. Commit your changes (git commit -m 'Add some AmazingFeature')
-4. Push to the branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
-
-## Contact Information
-
-For any questions or suggestions, please contact us through:
-- Email: support@taotaocollector.com
-- GitHub Issues: [https://github.com/yourusername/taotao-fast-image-collector/issues](https://github.com/yourusername/taotao-fast-image-collector/issues)
-
-Thank you for using Taotao Fast Image Collector!
+- GitHub: https://github.com/Running-Turtle1
+- Issues: https://github.com/Running-Turtle1/Taobao-Image-Collector/issues
