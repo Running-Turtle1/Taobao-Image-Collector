@@ -6,6 +6,10 @@ English: A Chrome extension to collect and download media URLs from Taobao/Tmall
 
 ![](images/UI.png)
 
+我后续又做了一个 Super-Taobao-Image-Collector 超级淘宝图片提取器，只需要搜索一种商品，点击一下插件，就能全自动疯狂下载所有商品图片 (即淘宝商品详情页的 main image 和 detailed image)，有需要的 send email to me
+
+演示视频: https://v.douyin.com/6ucNFSzLsEs/ 复制此链接，打开Dou音搜索，直接观看视频！
+
 ## 功能特性
 
 - 一键采集：主图 / SKU 图 / 详情图 / 买家秀 / 视频链接
